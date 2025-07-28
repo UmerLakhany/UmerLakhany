@@ -67,6 +67,7 @@ function Header() {
 					<ListItem key={item} disablePadding>
 						<ScrollLink
 							to={item.toLowerCase()}
+							onClick={toggleDrawer}
 							smooth
 							duration={500}
 							spy
