@@ -55,7 +55,7 @@ function Header() {
 		<Box
 			sx={{
 				width: 250,
-				bgcolor: "background.default",
+				bgcolor: [color.lightBlack],
 				height: "100%",
 				px: 2,
 				py: 3,
