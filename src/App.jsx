@@ -10,6 +10,7 @@ import Testimonials from "./components/Testimonials";
 import { Fab, Zoom } from "@mui/material";
 import { KeyboardArrowUp } from "@mui/icons-material";
 import { color } from "./style/color";
+import CustomCursor from "./components/CustomCursor/CustomCursor";
 
 function App() {
 	const [visible, setVisible] = useState(false);
@@ -36,6 +37,11 @@ function App() {
 			<Testimonials />
 			<Contact />
 			<Footer />
+
+			{/* ========== CustomCursor ========== */}
+			<CustomCursor />
+
+			{/* ========== Top Scroll Btn ========== */}
 			<Zoom in={visible}>
 				<Fab
 					onClick={scrollToTop}
