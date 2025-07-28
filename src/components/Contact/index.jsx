@@ -65,78 +65,87 @@ function Contact() {
 									Let’s Connect
 								</Typography>
 
-								<Stack spacing={3} sx={{ mt: 3 }}>
-									<TextField
-										label="Your Name"
-										variant="filled"
-										fullWidth
-										InputProps={{
-											sx: {
-												bgcolor: [color.formField],
-												color: [color.text],
-												borderRadius: 2,
-												"&:after": {
-													borderBottomColor: [color.primary],
+								<form action="https://formspree.io/f/xkgzbbar" method="POST">
+									<Stack spacing={3} sx={{ mt: 3 }}>
+										<TextField
+											label="Your Name"
+											variant="filled"
+											type="name"
+											name="name"
+											fullWidth
+											InputProps={{
+												sx: {
+													bgcolor: [color.formField],
+													color: [color.text],
+													borderRadius: 2,
+													"&:after": {
+														borderBottomColor: [color.primary],
+													},
 												},
-											},
-										}}
-										InputLabelProps={{ style: { color: [color.text] } }}
-									/>
+											}}
+											InputLabelProps={{ style: { color: [color.text] } }}
+										/>
 
-									<TextField
-										label="Your Email"
-										variant="filled"
-										fullWidth
-										InputProps={{
-											sx: {
-												bgcolor: [color.formField],
-												color: [color.text],
-												borderRadius: 2,
-												"&:after": {
-													borderBottomColor: [color.primary],
+										<TextField
+											label="Your Email"
+											variant="filled"
+											type="email"
+											name="email"
+											fullWidth
+											InputProps={{
+												sx: {
+													bgcolor: [color.formField],
+													color: [color.text],
+													borderRadius: 2,
+													"&:after": {
+														borderBottomColor: [color.primary],
+													},
 												},
-											},
-										}}
-										InputLabelProps={{ style: { color: [color.text] } }}
-									/>
+											}}
+											InputLabelProps={{ style: { color: [color.text] } }}
+										/>
 
-									<TextField
-										label="Message"
-										variant="filled"
-										multiline
-										rows={4}
-										fullWidth
-										InputProps={{
-											sx: {
-												bgcolor: [color.formField],
-												color: [color.text],
-												borderRadius: 2,
-												"&:after": {
-													borderBottomColor: [color.primary],
+										<TextField
+											label="Message"
+											type="message"
+											name="message"
+											variant="filled"
+											multiline
+											rows={4}
+											fullWidth
+											InputProps={{
+												sx: {
+													bgcolor: [color.formField],
+													color: [color.text],
+													borderRadius: 2,
+													"&:after": {
+														borderBottomColor: [color.primary],
+													},
 												},
-											},
-										}}
-										InputLabelProps={{ style: { color: [color.text] } }}
-									/>
+											}}
+											InputLabelProps={{ style: { color: [color.text] } }}
+										/>
 
-									<Button
-										variant="outlined"
-										sx={{
-											px: 5,
-											py: 1.8,
-											borderRadius: "12px",
-											fontWeight: "bold",
-											color: [color.primary],
-											border: `2px solid ${color.primary}`,
-											"&:hover": {
-												background: [color.primary],
-												color: [color.lightBlack],
-											},
-										}}
-									>
-										Send Message
-									</Button>
-								</Stack>
+										<Button
+											type="submit"
+											variant="outlined"
+											sx={{
+												px: 5,
+												py: 1.8,
+												borderRadius: "12px",
+												fontWeight: "bold",
+												color: [color.primary],
+												border: `2px solid ${color.primary}`,
+												"&:hover": {
+													background: [color.primary],
+													color: [color.lightBlack],
+												},
+											}}
+										>
+											Send Message
+										</Button>
+									</Stack>
+								</form>
 							</Paper>
 						</Grid>
 
