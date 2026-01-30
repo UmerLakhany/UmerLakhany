@@ -57,3 +57,11 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #33ccff, #00ffcc);
 }
+
+input {
+  color: #e0e0e0 !important;
+}
+
+textarea {
+  color: #e0e0e0 !important;
+}

@@ -11,6 +11,7 @@ import { Fab, Zoom } from "@mui/material";
 import { KeyboardArrowUp } from "@mui/icons-material";
 import { color } from "./style/color";
 import CustomCursor from "./components/CustomCursor/CustomCursor";
+import { ToasterContainer } from "./components/Toaster";
 
 function App() {
 	const [visible, setVisible] = useState(false);
@@ -29,6 +30,9 @@ function App() {
 
 	return (
 		<>
+			{/* ========== Toaster ========== */}
+			<ToasterContainer />
+
 			<Header />
 			<Hero />
 			<About />

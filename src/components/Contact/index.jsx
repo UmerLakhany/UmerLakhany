@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
 	Box,
 	Container,
@@ -13,8 +13,52 @@ import {
 import { motion } from "framer-motion";
 import { LocationOn, Email, Phone, LinkedIn } from "@mui/icons-material";
 import { color } from "../../style/color";
+import { useForm } from "react-hook-form";
+import { ErrorToaster, SuccessToaster } from "../Toaster";
+import InputField from "../Input";
+import { emailRegex } from "../../utils";
 
 function Contact() {
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+		reset,
+	} = useForm();
+
+	const [loading, setLoading] = useState(false);
+
+	const submitForm = async (formData) => {
+		setLoading(true);
+		try {
+			const obj = {
+				name: formData.name,
+				email: formData.email,
+				message: formData.message,
+			};
+			// Send data to Formspree endpoint
+			const response = await fetch("https://formspree.io/f/mvzrwdez", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(obj),
+			});
+
+			if (response.ok) {
+				SuccessToaster("Form submitted successfully");
+				reset();
+			} else {
+				const errorData = await response.json();
+				throw new Error(errorData.error || "Form submission failed");
+			}
+		} catch (error) {
+			ErrorToaster(error.message);
+		} finally {
+			setLoading(false);
+		}
+	};
+
 	return (
 		<Box
 			id="contact"
@@ -65,67 +109,41 @@ function Contact() {
 									Let’s Connect
 								</Typography>
 
-								<form action="https://formspree.io/f/xkgzbbar" method="POST">
+								<Box component={"form"} onSubmit={handleSubmit(submitForm)}>
 									<Stack spacing={3} sx={{ mt: 3 }}>
-										<TextField
-											label="Your Name"
-											variant="filled"
-											type="name"
+										<InputField
 											name="name"
-											fullWidth
-											InputProps={{
-												sx: {
-													bgcolor: [color.formField],
-													color: [color.text],
-													borderRadius: 2,
-													"&:after": {
-														borderBottomColor: [color.primary],
-													},
-												},
-											}}
-											InputLabelProps={{ style: { color: [color.text] } }}
+											label="Full Name"
+											placeholder="Enter your Name"
+											register={register}
+											errors={errors}
+											rules={{ required: "Please enter your Name." }}
 										/>
-
-										<TextField
-											label="Your Email"
-											variant="filled"
+										<InputField
 											type="email"
 											name="email"
-											fullWidth
-											InputProps={{
-												sx: {
-													bgcolor: [color.formField],
-													color: [color.text],
-													borderRadius: 2,
-													"&:after": {
-														borderBottomColor: [color.primary],
-													},
+											label="Email"
+											placeholder="Enter your Email here"
+											register={register}
+											errors={errors}
+											rules={{
+												required: "Please enter an email.",
+												pattern: {
+													value: emailRegex,
+													message: "Please enter a valid email.",
 												},
 											}}
-											InputLabelProps={{ style: { color: [color.text] } }}
 										/>
-
-										<TextField
-											label="Message"
-											type="message"
+										<InputField
 											name="message"
-											variant="filled"
-											multiline
+											label="Message"
 											rows={4}
-											fullWidth
-											InputProps={{
-												sx: {
-													bgcolor: [color.formField],
-													color: [color.text],
-													borderRadius: 2,
-													"&:after": {
-														borderBottomColor: [color.primary],
-													},
-												},
-											}}
-											InputLabelProps={{ style: { color: [color.text] } }}
+											multiline
+											placeholder="Enter your message"
+											register={register}
+											errors={errors}
+											rules={{ required: "Please enter your message." }}
 										/>
-
 										<Button
 											type="submit"
 											variant="outlined"
@@ -145,7 +163,7 @@ function Contact() {
 											Send Message
 										</Button>
 									</Stack>
-								</form>
+								</Box>
 							</Paper>
 						</Grid>
 
@@ -156,7 +174,10 @@ function Contact() {
 									{ icon: <LocationOn />, label: "Karachi, Pakistan" },
 									{ icon: <Phone />, label: "+92 327 2298414" },
 									{ icon: <Email />, label: "lakhanyumer@gmail.com" },
-									{ icon: <LinkedIn />, label: "linkedin.com/in/yourprofile" },
+									{
+										icon: <LinkedIn />,
+										label: "linkedin.com/in/umer-lakhany-05a8283a9",
+									},
 								].map((item, index) => (
 									<Stack
 										key={index}

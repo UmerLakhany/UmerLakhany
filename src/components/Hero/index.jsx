@@ -189,33 +189,6 @@ function Hero() {
 										Get in Touch
 									</Button>
 								</motion.div>
-
-								<motion.div whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.95 }}>
-									<Button
-										variant="outlined"
-										color="inherit"
-										size="large"
-										href="/Umer-CV.pdf"
-										download
-										sx={{
-											px: 4,
-											py: 1.6,
-											borderRadius: "12px",
-											border: `2px solid ${color.primary}`,
-											color: [color.primary],
-											fontWeight: 700,
-											textTransform: "none",
-											transition: "all 0.35s ease",
-											"&:hover": {
-												background: `linear-gradient(90deg,  ${color.primary}, ${color.secondary})`,
-												color: [color.lightBlack],
-												boxShadow: "0 6px 20px rgba(0, 255, 204, 0.3)",
-											},
-										}}
-									>
-										Download CV
-									</Button>
-								</motion.div>
 							</Stack>
 
 							<Stack direction="row" spacing={2}>
@@ -226,15 +199,15 @@ function Hero() {
 									},
 									{
 										icon: <LinkedIn fontSize="medium" />,
-										link: "#",
+										link: "https://www.linkedin.com/in/umer-lakhany-05a8283a9",
 									},
 									{
 										icon: <Instagram fontSize="medium" />,
-										link: "#",
+										link: "https://www.instagram.com/lakhanyxx",
 									},
 									{
 										icon: <Facebook fontSize="medium" />,
-										link: "#",
+										link: "https://www.facebook.com/umar.lakhany",
 									},
 									{
 										icon: (

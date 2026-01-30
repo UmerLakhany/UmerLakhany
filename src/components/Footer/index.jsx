@@ -174,17 +174,17 @@ function Footer() {
 								},
 								{
 									icon: <LinkedIn />,
-									link: "#",
+									link: "https://www.linkedin.com/in/umer-lakhany-05a8283a9",
 									label: "LinkedIn",
 								},
 								{
 									icon: <Instagram />,
-									link: "#",
+									link: "https://www.instagram.com/lakhanyxx",
 									label: "Instagram",
 								},
 								{
 									icon: <Facebook />,
-									link: "#",
+									link: "https://www.facebook.com/umar.lakhany",
 									label: "Facebook",
 								},
 								{
