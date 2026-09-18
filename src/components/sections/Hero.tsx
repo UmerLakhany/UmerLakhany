@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -43,10 +43,6 @@ export default function Hero() {
                 Let&apos;s Work Together
               </Link>
             </div>
-
-            <Link href="/journey" className="hero-explore">
-              Explore My Journey <ChevronDown size={16} />
-            </Link>
           </div>
 
           <div className="col-lg-6">
