@@ -64,13 +64,12 @@ export default function Navbar() {
         aria-labelledby="mobileNavLabel"
         ref={panelRef}
       >
-        <div className="offcanvas-header">
+        <div className="offcanvas-header d-flex align-items-center justify-content-between">
           <span className="brand-mark" id="mobileNavLabel">
             <span className="brand-dot" aria-hidden="true" />
             UMER LAKHANY
           </span>
-          <div className="d-flex align-items-center gap-2">
-            <ThemeToggle />
+
             <button
               type="button"
               className="nav-toggle"
@@ -79,7 +78,6 @@ export default function Navbar() {
             >
               <X size={20} />
             </button>
-          </div>
         </div>
         <div className="offcanvas-body d-flex flex-column">
           <nav className="nav-links mb-4" aria-label="Mobile">

@@ -1,14 +1,27 @@
 import Image from "next/image";
-import type { Project } from "@/lib/types";
+import {
+  Briefcase,
+  Cloud,
+  Globe,
+  HeartHandshake,
+  LayoutGrid,
+  Server,
+  ShoppingCart,
+  Store,
+  type LucideIcon,
+} from "lucide-react";
+import type { Project, ProjectCategory } from "@/lib/types";
 
-function initials(name: string) {
-  return name
-    .split(/\s+/)
-    .map((w) => w[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
-}
+const categoryIcon: Record<ProjectCategory, LucideIcon> = {
+  "Client Work": Briefcase,
+  "Web Application": Globe,
+  SaaS: Cloud,
+  Nonprofit: HeartHandshake,
+  Backend: Server,
+  Personal: LayoutGrid,
+  Marketplace: Store,
+  "E-commerce": ShoppingCart,
+};
 
 function hostFromUrl(url?: string) {
   if (!url) return "";
@@ -20,7 +33,9 @@ function hostFromUrl(url?: string) {
 }
 
 export default function ProjectMedia({ project }: { project: Project }) {
-  const { coverImage, name, liveUrl, status } = project;
+  const { coverImage, liveUrl, status } = project;
+  const primaryCategory = project.categories[0];
+  const Icon = categoryIcon[primaryCategory] ?? LayoutGrid;
 
   return (
     <div className="project-media">
@@ -44,8 +59,11 @@ export default function ProjectMedia({ project }: { project: Project }) {
             {liveUrl && <span className="browser-url">{hostFromUrl(liveUrl)}</span>}
           </div>
           <div className="project-media-placeholder">
-            <span className="mono-initial">{initials(name)}</span>
-            <span className="mono-tag">{project.categories[0]}</span>
+            <span className="placeholder-pattern" aria-hidden="true" />
+            <span className="placeholder-tile">
+              <Icon size={26} strokeWidth={1.75} />
+            </span>
+            <span className="placeholder-label">{primaryCategory}</span>
           </div>
         </div>
       )}

@@ -11,6 +11,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-h-scrolled);
+  overflow-x: hidden !important;
 }
 
 body {
@@ -26,9 +27,15 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   transition: background-color var(--dur-med) var(--ease-out), color var(--dur-med) var(--ease-out);
+  overflow-x: hidden !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.15;
@@ -61,14 +68,17 @@ img {
   width: 10px;
   height: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-primary);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb);
   border-radius: var(--radius-pill);
   border: 2px solid var(--bg-primary);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-thumb-hover);
 }
@@ -89,6 +99,7 @@ button {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
