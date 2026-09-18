@@ -1,0 +1,141 @@
+// ============================================================
+// Trust strip
+// ============================================================
+
+.trust-strip {
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.5rem 0;
+}
+
+.trust-item .icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37, 99, 235, 0.12);
+  color: var(--accent-secondary);
+  flex-shrink: 0;
+}
+
+.trust-item .label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.trust-item .label strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  text-transform: none;
+  font-weight: 700;
+}
+
+// ============================================================
+// Service cards
+// ============================================================
+
+.service-card {
+  height: 100%;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  background: linear-gradient(160deg, var(--bg-card), var(--bg-secondary));
+  transition: transform var(--dur-med) var(--ease-out), border-color var(--dur-med) var(--ease-out),
+    box-shadow var(--dur-med) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(220px 140px at 85% -10%, rgba(56, 189, 248, 0.16), transparent 70%);
+  opacity: 0;
+  transition: opacity var(--dur-med) var(--ease-out);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-glow);
+}
+.service-card:hover::after {
+  opacity: 1;
+}
+
+.service-card .icon-tile {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37, 99, 235, 0.14);
+  color: var(--accent-secondary);
+  margin-bottom: 1.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card p {
+  font-size: 0.92rem;
+  margin-bottom: 1.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card .explore-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  position: relative;
+  z-index: 1;
+}
+.service-card:hover .explore-link {
+  color: var(--accent-secondary);
+}
+.service-card .explore-link svg {
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.service-card:hover .explore-link svg {
+  transform: translateX(4px);
+}
+
+// Asymmetric layout — first card spans two rows on large screens
+@media (min-width: 992px) {
+  .services-grid .col-feature {
+    grid-row: span 2;
+  }
+  .services-grid .col-feature .service-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

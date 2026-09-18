@@ -1,0 +1,89 @@
+// ============================================================
+// Buttons
+// ============================================================
+
+.btn {
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-pill);
+  padding: 0.7rem 1.5rem;
+  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid transparent;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-lg {
+  padding: 0.85rem 1.9rem;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: var(--accent-gradient);
+  border: none;
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(37, 99, 235, 0.35);
+}
+.btn-primary:hover {
+  box-shadow: 0 10px 34px rgba(37, 99, 235, 0.5);
+  transform: translateY(-2px);
+  color: #fff;
+}
+.btn-primary:focus-visible {
+  color: #fff;
+}
+
+.btn-outline-light {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: var(--border-color-strong);
+  color: var(--text-primary);
+}
+.btn-outline-light:hover {
+  border-color: var(--accent-secondary);
+  background: rgba(56, 189, 248, 0.08);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-secondary);
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+.btn-ghost:hover {
+  color: var(--accent-secondary);
+}
+
+.btn-sm {
+  padding: 0.45rem 1.05rem;
+  font-size: 0.85rem;
+}
+
+.icon-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.02);
+  transition: all var(--dur-fast) var(--ease-out);
+}
+.icon-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-accent);
+  background: rgba(56, 189, 248, 0.08);
+  transform: translateY(-2px);
+}

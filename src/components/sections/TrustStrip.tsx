@@ -1,0 +1,32 @@
+import { CalendarClock, Globe2, Layers3, PackageCheck } from "lucide-react";
+
+const items = [
+  { icon: CalendarClock, label: "Freelance Developer", value: "Since 2024" },
+  { icon: Globe2, label: "International", value: "Clients" },
+  { icon: Layers3, label: "Full-Stack", value: "Development" },
+  { icon: PackageCheck, label: "End-to-End", value: "Project Delivery" },
+];
+
+export default function TrustStrip() {
+  return (
+    <section className="trust-strip">
+      <div className="container">
+        <div className="row row-cols-2 row-cols-md-4 g-0">
+          {items.map(({ icon: Icon, label, value }) => (
+            <div className="col" key={label}>
+              <div className="trust-item">
+                <span className="icon-wrap">
+                  <Icon size={20} />
+                </span>
+                <span className="label">
+                  {label}
+                  <strong>{value}</strong>
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,197 @@
+// ============================================================
+// Journey / Experience timeline
+// ============================================================
+
+.timeline {
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-primary), var(--border-color) 90%);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 3rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2.5rem;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 2px solid var(--accent-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-dot::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+}
+
+.timeline-item.is-current .timeline-dot {
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.18);
+}
+
+.timeline-year {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.timeline-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.55rem;
+}
+
+.timeline-item p {
+  max-width: 42rem;
+  margin-bottom: 0;
+}
+
+.timeline-card {
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  transition: border-color var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out);
+}
+
+.timeline-item:hover .timeline-card {
+  border-color: var(--border-accent);
+  transform: translateX(4px);
+}
+
+@media (max-width: 575.98px) {
+  .timeline {
+    padding-left: 1.9rem;
+  }
+  .timeline-dot {
+    left: -1.9rem;
+  }
+  .timeline-card {
+    padding: 1.25rem 1.25rem;
+  }
+}
+
+// ---- Experience: role card ----
+
+.role-card {
+  padding: 1.85rem 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  background: linear-gradient(150deg, var(--bg-card), var(--bg-secondary));
+}
+
+.role-card .role-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.role-card .role-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-secondary);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-accent);
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.role-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.role-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.role-list li svg {
+  color: var(--accent-secondary);
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 575.98px) {
+  .role-list {
+    grid-template-columns: 1fr;
+  }
+  .role-card {
+    padding: 1.5rem 1.4rem;
+  }
+}
+
+// ---- Education card ----
+
+.edu-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+}
+
+.edu-card .edu-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: rgba(37, 99, 235, 0.14);
+  color: var(--accent-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.coursework-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.1rem;
+}
+
+@media (max-width: 575.98px) {
+  .edu-card {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+}

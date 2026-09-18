@@ -1,0 +1,55 @@
+import {
+  Atom,
+  Triangle,
+  Braces,
+  FileType2,
+  Code2,
+  Palette,
+  LayoutGrid,
+  Wind,
+  Server,
+  Route,
+  Terminal,
+  Webhook,
+  KeyRound,
+  ShieldCheck,
+  Leaf,
+  Database,
+  Flame,
+  GitBranch,
+  Github,
+  Send,
+  MonitorSmartphone,
+  type LucideIcon,
+} from "lucide-react";
+
+const ICON_MAP: Record<string, LucideIcon> = {
+  react: Atom,
+  nextjs: Triangle,
+  js: Braces,
+  ts: FileType2,
+  html: Code2,
+  css: Palette,
+  bootstrap: LayoutGrid,
+  tailwind: Wind,
+  node: Server,
+  express: Route,
+  python: Terminal,
+  api: Webhook,
+  jwt: KeyRound,
+  auth: ShieldCheck,
+  mongodb: Leaf,
+  mysql: Database,
+  firebase: Flame,
+  postgresql: Database,
+  git: GitBranch,
+  github: Github,
+  postman: Send,
+  vscode: Code2,
+  vercel: Triangle,
+};
+
+export default function TechIcon({ icon, size = 18 }: { icon: string; size?: number }) {
+  const Icon = ICON_MAP[icon] ?? MonitorSmartphone;
+  return <Icon size={size} strokeWidth={2} />;
+}
