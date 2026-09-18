@@ -37,7 +37,7 @@
   padding: 0.7rem 1.1rem;
   border-radius: var(--radius-pill);
   border: 1px solid var(--border-color);
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(var(--tint-rgb), 0.02);
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-secondary);
@@ -67,7 +67,7 @@
 .form-control,
 .form-select,
 textarea.form-control {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(var(--tint-rgb), 0.03);
   border: 1px solid var(--border-color-strong);
   color: var(--text-primary);
   border-radius: var(--radius-md);
@@ -82,7 +82,7 @@ textarea.form-control {
 
 .form-control:focus,
 .form-select:focus {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(var(--tint-rgb), 0.05);
   border-color: var(--accent-secondary);
   color: var(--text-primary);
   box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);

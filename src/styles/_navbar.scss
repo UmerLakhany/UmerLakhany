@@ -19,11 +19,11 @@
 
 .site-header.is-scrolled {
   height: var(--header-h-scrolled);
-  background: rgba(7, 17, 31, 0.78);
+  background: rgba(var(--surface-rgb), 0.78);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-bottom-color: var(--border-color);
-  box-shadow: 0 12px 32px rgba(2, 8, 20, 0.35);
+  box-shadow: var(--shadow-md);
 }
 
 .brand-mark {
@@ -91,7 +91,7 @@
   height: 42px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-color);
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(var(--tint-rgb), 0.02);
   color: var(--text-primary);
   align-items: center;
   justify-content: center;
@@ -101,6 +101,7 @@
   background: var(--bg-secondary);
   border-left: 1px solid var(--border-color);
   width: min(84vw, 340px);
+  transition: background-color var(--dur-med) var(--ease-out), border-color var(--dur-med) var(--ease-out);
 }
 
 .mobile-nav-panel .nav-links {
@@ -122,6 +123,57 @@
 
 .mobile-nav-panel .nav-links a.is-active {
   color: var(--accent-secondary);
+}
+
+.theme-toggle {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: rgba(var(--tint-rgb), 0.02);
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+
+.theme-toggle:hover {
+  color: var(--text-primary);
+  border-color: var(--border-accent);
+  background: rgba(56, 189, 248, 0.08);
+  transform: translateY(-2px);
+}
+
+.theme-toggle-icon {
+  position: absolute;
+  transition: opacity var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out);
+}
+
+.theme-toggle .icon-moon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.4);
+}
+
+.theme-toggle .icon-sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.4);
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.mobile-nav-panel .theme-toggle {
+  margin-bottom: 1.25rem;
 }
 
 @media (max-width: 991.98px) {

@@ -42,7 +42,7 @@
 }
 
 .btn-outline-light {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(var(--tint-rgb), 0.02);
   border-color: var(--border-color-strong);
   color: var(--text-primary);
 }
@@ -78,7 +78,7 @@
   justify-content: center;
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(var(--tint-rgb), 0.02);
   transition: all var(--dur-fast) var(--ease-out);
 }
 .icon-btn:hover {

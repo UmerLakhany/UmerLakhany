@@ -86,7 +86,7 @@
   padding: 0.35rem 0.8rem;
   border-radius: var(--radius-pill);
   border: 1px solid var(--border-color);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(var(--tint-rgb), 0.03);
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--text-secondary);
@@ -109,8 +109,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(var(--tint-rgb), 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--tint-rgb), 0.035) 1px, transparent 1px);
   background-size: 42px 42px;
   mask-image: radial-gradient(ellipse 60% 60% at 50% 0%, black 40%, transparent 90%);
   pointer-events: none;

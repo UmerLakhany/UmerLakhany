@@ -21,10 +21,11 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   background-image:
-    radial-gradient(60rem 34rem at 82% -8%, rgba(37, 99, 235, 0.14), transparent 60%),
-    radial-gradient(46rem 30rem at -10% 18%, rgba(56, 189, 248, 0.08), transparent 55%);
+    radial-gradient(60rem 34rem at 82% -8%, var(--body-glow-1), transparent 60%),
+    radial-gradient(46rem 30rem at -10% 18%, var(--body-glow-2), transparent 55%);
   background-repeat: no-repeat;
   background-attachment: fixed;
+  transition: background-color var(--dur-med) var(--ease-out), color var(--dur-med) var(--ease-out);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -64,12 +65,12 @@ img {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1c2c45;
+  background: var(--scrollbar-thumb);
   border-radius: var(--radius-pill);
   border: 2px solid var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #253a5a;
+  background: var(--scrollbar-thumb-hover);
 }
 
 // Focus states — accessible, visible

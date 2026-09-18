@@ -100,7 +100,7 @@
   margin-left: 0.5rem;
   font-size: 0.7rem;
   color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(var(--tint-rgb), 0.03);
   border-radius: 5px;
   padding: 0.15rem 0.6rem;
   overflow: hidden;
@@ -152,7 +152,7 @@
   padding: 0.3rem 0.7rem;
   border-radius: var(--radius-pill);
   backdrop-filter: blur(6px);
-  background: rgba(11, 22, 40, 0.75);
+  background: rgba(var(--surface-rgb), 0.75);
   border: 1px solid var(--border-color-strong);
   color: var(--text-primary);
 }
@@ -202,7 +202,7 @@
   color: var(--text-secondary);
   padding: 0.28rem 0.6rem;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(var(--tint-rgb), 0.03);
   border: 1px solid var(--border-color);
 }
 

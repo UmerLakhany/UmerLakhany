@@ -6,6 +6,7 @@ import { useRef } from "react";
 import { Menu, X, Download } from "lucide-react";
 import { navLinks, siteConfig } from "@/data/site";
 import { useScrolled } from "@/lib/hooks";
+import ThemeToggle from "@/components/layout/ThemeToggle";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -42,6 +43,7 @@ export default function Navbar() {
           <a href={siteConfig.resumeUrl} className="btn btn-outline-light btn-sm" download>
             <Download size={15} /> Download Resume
           </a>
+          <ThemeToggle />
           <button
             type="button"
             className="nav-toggle"
@@ -67,14 +69,17 @@ export default function Navbar() {
             <span className="brand-dot" aria-hidden="true" />
             UMER LAKHANY
           </span>
-          <button
-            type="button"
-            className="nav-toggle"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close menu"
-          >
-            <X size={20} />
-          </button>
+          <div className="d-flex align-items-center gap-2">
+            <ThemeToggle />
+            <button
+              type="button"
+              className="nav-toggle"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close menu"
+            >
+              <X size={20} />
+            </button>
+          </div>
         </div>
         <div className="offcanvas-body d-flex flex-column">
           <nav className="nav-links mb-4" aria-label="Mobile">
