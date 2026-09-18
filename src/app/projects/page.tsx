@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Projects",
   description:
     "Real projects, client work, and software Umer Lakhany has built — nonprofit platforms, SaaS products, marketplaces, and business websites.",
+  alternates: { canonical: "/projects" },
 };
 
 export default function ProjectsPage() {

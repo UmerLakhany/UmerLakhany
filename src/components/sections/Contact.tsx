@@ -1,7 +1,6 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import emailjs from "@emailjs/browser";
 import { Mail, Github, Linkedin, Briefcase, Facebook, Instagram, Send } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import { siteConfig, emailjsConfig } from "@/data/site";
@@ -27,6 +26,7 @@ export default function Contact() {
     }
 
     try {
+      const emailjs = (await import("@emailjs/browser")).default;
       await emailjs.send(
         serviceId,
         templateId,

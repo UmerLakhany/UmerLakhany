@@ -6,6 +6,7 @@ import { services } from "@/data/services";
 export const metadata: Metadata = {
   title: "Services",
   description: "What I build — web development, full-stack applications, SaaS products, APIs, dashboards and website optimization.",
+  alternates: { canonical: "/services" },
 };
 
 const ICONS: Record<string, LucideIcon> = {

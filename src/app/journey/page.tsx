@@ -6,11 +6,13 @@ import Journey from "@/components/sections/Journey";
 export const metadata: Metadata = {
   title: "Journey",
   description: "How Umer Lakhany went from freelancing in 2024 to building full-stack software as a BSCS student.",
+  alternates: { canonical: "/journey" },
 };
 
 export default function JourneyPage() {
   return (
     <>
+      <h1 className="visually-hidden">My Development Journey</h1>
       <div style={{ paddingTop: "calc(var(--header-h) + 1rem)" }}>
         <Journey />
       </div>

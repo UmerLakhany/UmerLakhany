@@ -8,6 +8,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollTopButton from "@/components/layout/ScrollTopButton";
 import ScrollProgress from "@/components/layout/ScrollProgress";
+import StructuredData from "@/components/seo/StructuredData";
 import { siteConfig } from "@/data/site";
 
 const inter = Inter({
@@ -57,6 +58,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({
@@ -65,7 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -73,6 +77,7 @@ export default function RootLayout({
               "(function(){try{if(localStorage.getItem('theme')==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}})();",
           }}
         />
+        <StructuredData />
       </head>
       <body>
         <ScrollProgress />

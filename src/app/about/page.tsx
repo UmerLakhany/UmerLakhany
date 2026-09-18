@@ -9,6 +9,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description: `More about ${siteConfig.name} — a Computer Science student and freelance Full-Stack Web Developer.`,
+  alternates: { canonical: "/about" },
 };
 
 const focusAreas = [

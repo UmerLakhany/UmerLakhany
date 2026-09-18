@@ -7,11 +7,13 @@ import Education from "@/components/sections/Education";
 export const metadata: Metadata = {
   title: "Experience",
   description: "Umer Lakhany's freelance experience and academic background in Computer Science.",
+  alternates: { canonical: "/experience" },
 };
 
 export default function ExperiencePage() {
   return (
     <>
+      <h1 className="visually-hidden">Professional Experience</h1>
       <div style={{ paddingTop: "calc(var(--header-h) + 1rem)" }}>
         <Experience />
       </div>
