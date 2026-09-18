@@ -49,7 +49,7 @@
 }
 
 .timeline-item.is-current .timeline-dot {
-  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.18);
+  animation: ringPulse 2.4s ease-in-out infinite;
 }
 
 .timeline-year {

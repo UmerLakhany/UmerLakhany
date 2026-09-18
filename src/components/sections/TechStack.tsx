@@ -36,13 +36,15 @@ export default function TechStack() {
         </Reveal>
 
         <div className="tech-grid" role="tabpanel">
-          {current.items.map((item) => (
-            <div className="tech-item" key={item.name}>
-              <span className="tech-icon">
-                <TechIcon icon={item.icon} />
-              </span>
-              <span>{item.name}</span>
-            </div>
+          {current.items.map((item, i) => (
+            <Reveal key={item.name} delay={i * 40}>
+              <div className="tech-item">
+                <span className="tech-icon">
+                  <TechIcon icon={item.icon} />
+                </span>
+                <span>{item.name}</span>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

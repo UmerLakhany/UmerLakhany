@@ -9,6 +9,34 @@
   overflow: hidden;
 }
 
+.hero-kicker,
+.hero-title,
+.hero-desc,
+.hero-stack,
+.hero-cta-row,
+.hero-visual {
+  animation: heroFadeUp 0.85s var(--ease-out) both;
+}
+
+.hero-kicker {
+  animation-delay: 0.05s;
+}
+.hero-title {
+  animation-delay: 0.16s;
+}
+.hero-desc {
+  animation-delay: 0.3s;
+}
+.hero-stack {
+  animation-delay: 0.42s;
+}
+.hero-cta-row {
+  animation-delay: 0.52s;
+}
+.hero-visual {
+  animation-delay: 0.36s;
+}
+
 .hero-kicker {
   display: inline-flex;
   align-items: center;
@@ -26,11 +54,22 @@
 }
 
 .hero-kicker .dot {
+  position: relative;
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: var(--success);
   box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.18);
+}
+
+.hero-kicker .dot::after,
+.hero-float-card .badge-dot::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid var(--success);
+  animation: pingRing 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 .hero-title {
@@ -161,6 +200,7 @@
 }
 
 .hero-float-card .badge-dot {
+  position: relative;
   width: 8px;
   height: 8px;
   border-radius: 50%;

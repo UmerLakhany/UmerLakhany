@@ -5,7 +5,7 @@ import { Moon, Sun } from "lucide-react";
 export default function ThemeToggle() {
   const toggle = () => {
     const root = document.documentElement;
-    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
     root.setAttribute("data-theme", next);
     try {
       localStorage.setItem("theme", next);

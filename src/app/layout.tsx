@@ -7,6 +7,7 @@ import { ToasterContainer } from "@/components/Toaster";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollTopButton from "@/components/layout/ScrollTopButton";
+import ScrollProgress from "@/components/layout/ScrollProgress";
 import { siteConfig } from "@/data/site";
 
 const inter = Inter({
@@ -34,6 +35,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -64,11 +70,12 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();",
+              "(function(){try{if(localStorage.getItem('theme')==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}})();",
           }}
         />
       </head>
       <body>
+        <ScrollProgress />
         <ToasterContainer />
         <Navbar />
         <main>{children}</main>

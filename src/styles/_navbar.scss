@@ -2,6 +2,23 @@
 // Navbar
 // ============================================================
 
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 1100;
+  pointer-events: none;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  background: var(--accent-gradient);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.45);
+  transition: width 120ms linear;
+}
+
 .site-header {
   position: fixed;
   top: 0;
@@ -152,24 +169,24 @@
   transition: opacity var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out);
 }
 
-.theme-toggle .icon-moon {
-  opacity: 0;
-  transform: rotate(-90deg) scale(0.4);
-}
-
 .theme-toggle .icon-sun {
-  opacity: 1;
-  transform: rotate(0deg) scale(1);
-}
-
-:root[data-theme="dark"] .theme-toggle .icon-sun {
   opacity: 0;
   transform: rotate(90deg) scale(0.4);
 }
 
-:root[data-theme="dark"] .theme-toggle .icon-moon {
+.theme-toggle .icon-moon {
   opacity: 1;
   transform: rotate(0deg) scale(1);
+}
+
+:root[data-theme="light"] .theme-toggle .icon-sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+:root[data-theme="light"] .theme-toggle .icon-moon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.4);
 }
 
 .mobile-nav-panel .theme-toggle {

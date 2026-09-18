@@ -1,4 +1,5 @@
 import { CalendarClock, Globe2, Layers3, PackageCheck } from "lucide-react";
+import Reveal from "@/components/ui/Reveal";
 
 const items = [
   { icon: CalendarClock, label: "Freelance Developer", value: "Since 2024" },
@@ -12,17 +13,19 @@ export default function TrustStrip() {
     <section className="trust-strip">
       <div className="container">
         <div className="row row-cols-2 row-cols-md-4 g-0">
-          {items.map(({ icon: Icon, label, value }) => (
+          {items.map(({ icon: Icon, label, value }, i) => (
             <div className="col" key={label}>
-              <div className="trust-item">
-                <span className="icon-wrap">
-                  <Icon size={20} />
-                </span>
-                <span className="label">
-                  {label}
-                  <strong>{value}</strong>
-                </span>
-              </div>
+              <Reveal delay={i * 80} className="h-100">
+                <div className="trust-item">
+                  <span className="icon-wrap">
+                    <Icon size={20} />
+                  </span>
+                  <span className="label">
+                    {label}
+                    <strong>{value}</strong>
+                  </span>
+                </div>
+              </Reveal>
             </div>
           ))}
         </div>
