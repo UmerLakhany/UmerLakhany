@@ -40,8 +40,8 @@ export default function Navbar() {
         </nav>
 
         <div className="nav-cta">
-          <a href={siteConfig.resumeUrl} className="btn btn-outline-light btn-sm" download>
-            <Download size={15} /> Download Resume
+          <a href={siteConfig.cvUrl} className="btn btn-outline-light btn-sm" download>
+            <Download size={15} /> Download CV
           </a>
           <ThemeToggle />
           <button
@@ -92,8 +92,8 @@ export default function Navbar() {
               </Link>
             ))}
           </nav>
-          <a href={siteConfig.resumeUrl} className="btn btn-primary w-100" download>
-            <Download size={16} /> Download Resume
+          <a href={siteConfig.cvUrl} className="btn btn-primary w-100" download>
+            <Download size={16} /> Download CV
           </a>
         </div>
       </div>

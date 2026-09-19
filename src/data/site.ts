@@ -8,7 +8,7 @@ export const siteConfig = {
   subrole: "BSCS Student",
   location: "Pakistan",
   email: "lakhanyumer@gmail.com",
-  resumeUrl: "/resume.pdf", // drop your resume PDF into /public/resume.pdf
+  cvUrl: "/Muhammad_Umer_Lakakhany_CV.pdf",
   description:
     "Umer Lakhany is a Computer Science student and freelance Full-Stack Web Developer specializing in React, Next.js, Node.js, TypeScript and modern web applications.",
   url: "https://umerlakhany.dev", // update once a production domain is live
