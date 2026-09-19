@@ -30,6 +30,25 @@
   color: var(--text-primary);
 }
 
+@media (max-width: 767.98px) {
+  .project-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    padding-bottom: 0.2rem;
+  }
+  .project-filters::-webkit-scrollbar {
+    display: none;
+  }
+  .project-filters button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    scroll-snap-align: start;
+  }
+}
+
 .project-card {
   display: block;
   border-radius: var(--radius-lg);

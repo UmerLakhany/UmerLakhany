@@ -24,38 +24,40 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
-      <div className="container d-flex align-items-center justify-content-between">
-        <Link href="/" className="brand-mark">
-          <span className="brand-dot" aria-hidden="true" />
-          UMER LAKHANY
-        </Link>
+    <>
+      <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
+        <div className="container d-flex align-items-center justify-content-between">
+          <Link href="/" className="brand-mark">
+            <span className="brand-dot" aria-hidden="true" />
+            UMER LAKHANY
+          </Link>
 
-        <nav className="nav-links" aria-label="Primary">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className={isActive(link.href) ? "is-active" : ""}>
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+          <nav className="nav-links" aria-label="Primary">
+            {navLinks.map((link) => (
+              <Link key={link.href} href={link.href} className={isActive(link.href) ? "is-active" : ""}>
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-        <div className="nav-cta">
-          <a href={siteConfig.cvUrl} className="btn btn-outline-light btn-sm" download>
-            <Download size={15} /> Download CV
-          </a>
-          <ThemeToggle />
-          <button
-            type="button"
-            className="nav-toggle"
-            aria-label="Open menu"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#mobileNav"
-            aria-controls="mobileNav"
-          >
-            <Menu size={20} />
-          </button>
+          <div className="nav-cta">
+            <a href={siteConfig.cvUrl} className="btn btn-outline-light btn-sm" download>
+              <Download size={15} /> Download CV
+            </a>
+            <ThemeToggle />
+            <button
+              type="button"
+              className="nav-toggle"
+              aria-label="Open menu"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#mobileNav"
+              aria-controls="mobileNav"
+            >
+              <Menu size={20} />
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
       <div
         className="offcanvas offcanvas-end mobile-nav-panel"
@@ -97,6 +99,6 @@ export default function Navbar() {
           </a>
         </div>
       </div>
-    </header>
+    </>
   );
 }
