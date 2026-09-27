@@ -14,10 +14,8 @@ export default function Projects() {
       <div className="container">
         <Reveal className="section-head">
           <span className="eyebrow">Portfolio</span>
-          <h2 className="section-title mb-2">Selected Work</h2>
-          <p className="section-sub">
-            Real projects, client work, and software I&apos;ve built throughout my development journey.
-          </p>
+          <h2 className="section-title mb-2">Projects</h2>
+          <p className="section-sub">Live web platforms and applications I&apos;ve developed.</p>
         </Reveal>
 
         <div className="row g-4">

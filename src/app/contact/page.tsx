@@ -3,7 +3,7 @@ import Contact from "@/components/sections/Contact";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch about a website, web application, SaaS product or backend system.",
+  description: "Get in touch with Umer Lakhany, Full-Stack Developer based in Karachi, Pakistan.",
   alternates: { canonical: "/contact" },
 };
 

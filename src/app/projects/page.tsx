@@ -4,7 +4,7 @@ import ProjectsGrid from "@/components/projects/ProjectsGrid";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Real projects, client work, and software Umer Lakhany has built — nonprofit platforms, SaaS products, marketplaces, and business websites.",
+    "Live projects developed by Umer Lakhany — including Zeno eSIM, Saudagran, Weekly Team Fun, LIVIDOUSA, Janet Adenusi, SaaS products, and business websites.",
   alternates: { canonical: "/projects" },
 };
 
@@ -14,11 +14,8 @@ export default function ProjectsPage() {
       <div className="container">
         <div className="section-head mx-auto text-center">
           <span className="eyebrow justify-content-center">Portfolio</span>
-          <h1 className="section-title">Selected Work</h1>
-          <p className="section-sub">
-            Real projects, client work, experiments, and software I&apos;ve built throughout my
-            development journey.
-          </p>
+          <h1 className="section-title">Projects</h1>
+          <p className="section-sub">Live web platforms and applications I&apos;ve developed.</p>
         </div>
         <ProjectsGrid />
       </div>

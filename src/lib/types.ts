@@ -1,32 +1,18 @@
-export type ProjectStatus = "Completed" | "In Development" | "Ongoing";
+export type ProjectStatus = "Live" | "In Development";
 
 export type ProjectCategory =
-  | "Client Work"
+  | "Platform"
+  | "Full-Stack"
   | "Web Application"
   | "SaaS"
   | "Nonprofit"
-  | "Backend"
-  | "Personal"
-  | "Marketplace"
-  | "E-commerce";
+  | "E-commerce"
+  | "Website"
+  | "Personal";
 
 export interface ProjectImage {
   src: string;
   alt: string;
-}
-
-export interface CaseStudyContent {
-  overview: string;
-  challenge: string;
-  solution: string;
-  features: string[];
-  role: string;
-  architecture?: string;
-  process?: string;
-  challenges?: string;
-  outcome: string;
-  learned?: string;
-  future?: string;
 }
 
 export interface Project {
@@ -43,20 +29,7 @@ export interface Project {
   featured?: boolean;
   coverImage?: ProjectImage;
   gallery?: ProjectImage[];
-  caseStudy?: CaseStudyContent;
-}
-
-export interface Service {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-export interface TimelineEntry {
-  year: string;
-  title: string;
-  description: string;
-  current?: boolean;
+  highlights: string[];
 }
 
 export interface SkillItem {

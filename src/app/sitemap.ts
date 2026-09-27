@@ -3,7 +3,7 @@ import { projects } from "@/data/projects";
 import { siteConfig } from "@/data/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/about", "/services", "/projects", "/journey", "/experience", "/contact"].map((route) => ({
+  const staticRoutes = ["", "/about", "/experience", "/projects", "/contact"].map((route) => ({
     url: `${siteConfig.url}${route}`,
     lastModified: new Date(),
   }));

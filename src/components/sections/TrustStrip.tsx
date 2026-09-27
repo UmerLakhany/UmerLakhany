@@ -1,11 +1,11 @@
-import { CalendarClock, Globe2, Layers3, PackageCheck } from "lucide-react";
+import { Briefcase, Globe2, Layers3, GraduationCap } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
 const items = [
-  { icon: CalendarClock, label: "Freelance Developer", value: "Since 2024" },
-  { icon: Globe2, label: "International", value: "Clients" },
+  { icon: Briefcase, label: "Software Developer", value: "Slynx Technologies" },
+  { icon: Globe2, label: "Working", value: "Remote" },
   { icon: Layers3, label: "Full-Stack", value: "Development" },
-  { icon: PackageCheck, label: "End-to-End", value: "Project Delivery" },
+  { icon: GraduationCap, label: "BS Computer Science", value: "2025 — 2028" },
 ];
 
 export default function TrustStrip() {

@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Layers, Rocket, Server, Webhook, Database, Gauge } from "lucide-react";
+import { ArrowRight, Layers, Webhook, Database, ShieldCheck, CreditCard, Globe } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
-const focusAreas = [
+export const focusAreas = [
   { icon: Layers, label: "Full-Stack Development" },
-  { icon: Rocket, label: "SaaS Applications" },
-  { icon: Server, label: "Backend Systems" },
-  { icon: Webhook, label: "API Development" },
-  { icon: Database, label: "Database Systems" },
-  { icon: Gauge, label: "Performance & SEO" },
+  { icon: Webhook, label: "REST API Development" },
+  { icon: Database, label: "Database Integration" },
+  { icon: ShieldCheck, label: "Authentication" },
+  { icon: CreditCard, label: "Payment Gateway Integration" },
+  { icon: Globe, label: "Hosting & Domains" },
 ];
 
 export default function About() {
@@ -34,28 +34,29 @@ export default function About() {
           <div className="col-lg-7">
             <Reveal>
               <span className="eyebrow">About Me</span>
-              <h2 className="section-title">Building Software With Purpose.</h2>
+              <h2 className="section-title">Professional Summary</h2>
             </Reveal>
 
             <Reveal delay={80}>
               <p className="fs-5">
-                I&apos;m a Computer Science student and freelance Full-Stack Web Developer focused on
-                building practical software solutions.
+                I&apos;m a Full-Stack Developer with hands-on experience developing, deploying, and
+                maintaining responsive web applications.
               </p>
               <p>
-                I work across the frontend and backend, turning business requirements and ideas into
-                responsive web applications, SaaS products, APIs, dashboards and database-driven systems.
+                I work with JavaScript, TypeScript, React.js, Next.js, Angular, Node.js, and Express.js,
+                with experience in database integration, REST API development, authentication, and
+                payment gateway integration. I&apos;m also skilled in troubleshooting application errors,
+                resolving technical issues, and configuring website hosting and domains.
               </p>
               <p>
-                I started freelancing while studying Computer Science, and I&apos;ve been learning by
-                combining academic fundamentals with real client projects — building things for actual
-                users rather than only working through exercises.
+                I take web projects from requirements through development and deployment, and I&apos;m
+                currently pursuing a Bachelor of Science in Computer Science.
               </p>
             </Reveal>
 
             <Reveal delay={140}>
               <p className="fw-semibold text-uppercase small mb-3" style={{ letterSpacing: "0.08em", color: "var(--text-secondary)" }}>
-                Currently focused on
+                What I work on
               </p>
               <ul className="about-focus-list list-unstyled">
                 {focusAreas.map(({ icon: Icon, label }) => (

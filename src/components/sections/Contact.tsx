@@ -1,10 +1,10 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { Mail, Github, Linkedin, Briefcase, Facebook, Instagram, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import { siteConfig, emailjsConfig } from "@/data/site";
-import { PROJECT_TYPES, BUDGET_RANGES, type ContactFormValues } from "@/lib/contact-types";
+import type { ContactFormValues } from "@/lib/contact-types";
 import { SuccessToaster, ErrorToaster } from "@/components/Toaster";
 
 export default function Contact() {
@@ -33,8 +33,7 @@ export default function Contact() {
         {
           from_name: values.name,
           from_email: values.email,
-          project_type: values.projectType,
-          budget: values.budget || "Not specified",
+          subject: values.subject,
           message: values.message,
           to_email: siteConfig.email,
         },
@@ -49,11 +48,9 @@ export default function Contact() {
 
   const pills = [
     { href: `mailto:${siteConfig.email}`, label: siteConfig.email, icon: Mail },
-    { href: siteConfig.social.github, label: "GitHub", icon: Github },
+    { href: `tel:${siteConfig.phone.replace(/\s/g, "")}`, label: siteConfig.phone, icon: Phone },
     { href: siteConfig.social.linkedin, label: "LinkedIn", icon: Linkedin },
-    { href: siteConfig.social.fiverr, label: "Fiverr", icon: Briefcase },
-    { href: siteConfig.social.facebook, label: "Facebook", icon: Facebook },
-    { href: siteConfig.social.instagram, label: "Instagram", icon: Instagram },
+    { href: siteConfig.social.github, label: "GitHub", icon: Github },
   ];
 
   return (
@@ -65,13 +62,16 @@ export default function Contact() {
               <div className="col-lg-5 position-relative">
                 <span className="eyebrow">Get In Touch</span>
                 <h2 className="section-title" style={{ fontSize: "clamp(1.9rem, 3vw, 2.6rem)" }}>
-                  Have an Idea?
+                  Let&apos;s Work
                   <br />
-                  Let&apos;s Build It.
+                  Together.
                 </h2>
                 <p className="fs-6">
-                  Whether you need a website, web application, SaaS product or custom backend system,
-                  let&apos;s discuss your requirements.
+                  I&apos;m open to opportunities to contribute to a development team. Feel free to reach
+                  out by email, phone, or the form.
+                </p>
+                <p className="fs-6 d-flex align-items-center gap-2">
+                  <MapPin size={16} /> {siteConfig.location}
                 </p>
 
                 <div className="contact-info-row">
@@ -121,40 +121,16 @@ export default function Contact() {
                         {errors.email && <p className="field-error">{errors.email.message}</p>}
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-12">
                       <div className="form-field mb-0">
-                        <label htmlFor="projectType">Project Type</label>
-                        <select
-                          id="projectType"
-                          className="form-select"
-                          defaultValue=""
-                          {...register("projectType", { required: "Please select a project type" })}
-                        >
-                          <option value="" disabled>
-                            Select project type
-                          </option>
-                          {PROJECT_TYPES.map((t) => (
-                            <option key={t} value={t}>
-                              {t}
-                            </option>
-                          ))}
-                        </select>
-                        {errors.projectType && <p className="field-error">{errors.projectType.message}</p>}
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="form-field mb-0">
-                        <label htmlFor="budget">Budget</label>
-                        <select id="budget" className="form-select" defaultValue="" {...register("budget")}>
-                          <option value="" disabled>
-                            Select a range
-                          </option>
-                          {BUDGET_RANGES.map((b) => (
-                            <option key={b} value={b}>
-                              {b}
-                            </option>
-                          ))}
-                        </select>
+                        <label htmlFor="subject">Subject</label>
+                        <input
+                          id="subject"
+                          className="form-control"
+                          placeholder="What's this about?"
+                          {...register("subject", { required: "Please add a subject" })}
+                        />
+                        {errors.subject && <p className="field-error">{errors.subject.message}</p>}
                       </div>
                     </div>
                     <div className="col-12">
@@ -164,7 +140,7 @@ export default function Contact() {
                           id="message"
                           rows={4}
                           className="form-control"
-                          placeholder="Tell me a bit about your project..."
+                          placeholder="Your message..."
                           {...register("message", { required: "Please add a short message" })}
                         />
                         {errors.message && <p className="field-error">{errors.message.message}</p>}
@@ -172,7 +148,7 @@ export default function Contact() {
                     </div>
                     <div className="col-12">
                       <button type="submit" className="btn btn-primary btn-lg" disabled={isSubmitting}>
-                        {isSubmitting ? "Sending..." : "Start a Project"} <Send size={16} />
+                        {isSubmitting ? "Sending..." : "Send Message"} <Send size={16} />
                       </button>
                       <p className="form-note">
                         I typically respond within 1–2 business days. Prefer email? Use the link on the left.

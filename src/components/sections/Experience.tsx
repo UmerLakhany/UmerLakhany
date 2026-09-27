@@ -8,7 +8,7 @@ export default function Experience() {
       <div className="container">
         <Reveal className="section-head" as="div">
           <span className="eyebrow">Experience</span>
-          <h2 className="section-title">Professional Experience</h2>
+          <h2 className="section-title">Work Experience</h2>
         </Reveal>
 
         <Reveal>
@@ -18,7 +18,7 @@ export default function Experience() {
                 <h3 className="h4 mb-1">{experienceRole.title}</h3>
                 <p className="mb-0 text-secondary-token">{experienceRole.org}</p>
               </div>
-              <span className="role-badge">{experienceRole.period}</span>
+              <span className="role-badge">{experienceRole.workMode}</span>
             </div>
             <ul className="role-list">
               {experienceRole.responsibilities.map((item) => (

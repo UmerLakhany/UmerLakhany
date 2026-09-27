@@ -1,26 +1,26 @@
 import Image from "next/image";
 import {
-  Briefcase,
   Cloud,
   Globe,
   HeartHandshake,
+  Layers,
   LayoutGrid,
-  Server,
   ShoppingCart,
-  Store,
+  Smartphone,
+  User,
   type LucideIcon,
 } from "lucide-react";
 import type { Project, ProjectCategory } from "@/lib/types";
 
 const categoryIcon: Record<ProjectCategory, LucideIcon> = {
-  "Client Work": Briefcase,
-  "Web Application": Globe,
+  Platform: Smartphone,
+  "Full-Stack": Layers,
+  "Web Application": LayoutGrid,
   SaaS: Cloud,
   Nonprofit: HeartHandshake,
-  Backend: Server,
-  Personal: LayoutGrid,
-  Marketplace: Store,
   "E-commerce": ShoppingCart,
+  Website: Globe,
+  Personal: User,
 };
 
 function hostFromUrl(url?: string) {
@@ -39,7 +39,7 @@ export default function ProjectMedia({ project }: { project: Project }) {
 
   return (
     <div className="project-media">
-      <span className={`project-status-badge ${status === "Completed" ? "status-live" : "status-dev"}`}>
+      <span className={`project-status-badge ${status === "Live" ? "status-live" : "status-dev"}`}>
         {status}
       </span>
 

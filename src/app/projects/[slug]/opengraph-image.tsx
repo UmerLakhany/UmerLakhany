@@ -12,7 +12,7 @@ export default async function ProjectOgImage({ params }: { params: Promise<{ slu
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   const name = project?.name ?? "Umer Lakhany";
-  const tagline = project?.tagline ?? "Full-Stack Web Developer";
+  const tagline = project?.tagline ?? "Full-Stack Developer";
   const category = project?.categories[0] ?? "Project";
 
   return new ImageResponse(

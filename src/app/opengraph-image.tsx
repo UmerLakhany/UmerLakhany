@@ -3,7 +3,7 @@ import { siteConfig } from "@/data/site";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = `${siteConfig.name} — Full-Stack Web Developer`;
+export const alt = `${siteConfig.name} — Full-Stack Developer`;
 
 export default async function OgImage() {
   return new ImageResponse(
@@ -53,7 +53,7 @@ export default async function OgImage() {
             letterSpacing: -2,
           }}
         >
-          Full-Stack Web Developer
+          Full-Stack Developer
         </div>
         <div
           style={{
@@ -63,11 +63,11 @@ export default async function OgImage() {
             maxWidth: 820,
           }}
         >
-          Building modern web applications, SaaS products &amp; backend systems.
+          Software Developer at Slynx Technologies · Karachi, Pakistan
         </div>
 
         <div style={{ display: "flex", gap: 14, marginTop: 48 }}>
-          {["React.js", "Next.js", "Node.js", "TypeScript", "Python"].map((tag) => (
+          {["React.js", "Next.js", "Angular", "Node.js", "TypeScript"].map((tag) => (
             <div
               key={tag}
               style={{

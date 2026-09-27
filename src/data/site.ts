@@ -4,20 +4,17 @@
 
 export const siteConfig = {
   name: "Umer Lakhany",
-  role: "Full-Stack Web Developer",
-  subrole: "BSCS Student",
-  location: "Pakistan",
+  role: "Full-Stack Developer",
+  location: "Karachi, Pakistan",
   email: "lakhanyumer@gmail.com",
+  phone: "+92 327 2298414",
   cvUrl: "/Muhammad_Umer_Lakakhany_CV.pdf",
   description:
-    "Umer Lakhany is a Computer Science student and freelance Full-Stack Web Developer specializing in React, Next.js, Node.js, TypeScript and modern web applications.",
-  url: "https://umerlakhany.dev", // update once a production domain is live
+    "Umer Lakhany is a Full-Stack Developer at Slynx Technologies, building responsive web applications with JavaScript, TypeScript, React.js, Next.js, Angular, Node.js and Express.js.",
+  url: "https://umer-lakhany.vercel.app",
   social: {
     github: "https://github.com/UmerLakhany",
     linkedin: "https://www.linkedin.com/in/umer-lakhany-05a8283a9",
-    fiverr: "https://www.fiverr.com/umer_lakhany",
-    facebook: "https://www.facebook.com/umar.lakhany",
-    instagram: "https://www.instagram.com/lakhanyxx",
   },
 };
 
@@ -37,9 +34,7 @@ export const emailjsConfig = {
 export const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Projects", href: "/projects" },
-  { label: "Journey", href: "/journey" },
   { label: "Experience", href: "/experience" },
+  { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/contact" },
 ];

@@ -1,17 +1,14 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail, Briefcase, Facebook, Instagram, MapPin, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 import { navLinks, siteConfig } from "@/data/site";
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  const { social, email, location } = siteConfig;
+  const { social, email, phone, location } = siteConfig;
 
   const socialLinks = [
     { href: social.github, label: "GitHub", icon: Github },
     { href: social.linkedin, label: "LinkedIn", icon: Linkedin },
-    { href: social.fiverr, label: "Fiverr", icon: Briefcase },
-    { href: social.facebook, label: "Facebook", icon: Facebook },
-    { href: social.instagram, label: "Instagram", icon: Instagram },
     { href: `mailto:${email}`, label: "Email", icon: Mail },
   ];
 
@@ -60,12 +57,16 @@ export default function Footer() {
                 <a href={`mailto:${email}`}>{email}</a>
               </li>
               <li>
+                <Phone size={16} />
+                <a href={`tel:${phone.replace(/\s/g, "")}`}>{phone}</a>
+              </li>
+              <li>
                 <MapPin size={16} />
                 <span>{location}</span>
               </li>
             </ul>
             <Link href="/contact" className="footer-cta">
-              Let&apos;s work together <ArrowUpRight size={16} />
+              Get in touch <ArrowUpRight size={16} />
             </Link>
           </div>
         </div>

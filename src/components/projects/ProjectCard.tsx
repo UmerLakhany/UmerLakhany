@@ -4,8 +4,6 @@ import type { Project } from "@/lib/types";
 import ProjectMedia from "./ProjectMedia";
 
 export default function ProjectCard({ project, featured = false }: { project: Project; featured?: boolean }) {
-  const hasCaseStudy = Boolean(project.caseStudy);
-
   return (
     <article className={`project-card ${featured ? "is-featured" : ""}`}>
       <ProjectMedia project={project} />
@@ -23,14 +21,12 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
         <div className="project-actions">
           {project.liveUrl && (
             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="link-arrow">
-              Live Website <ArrowUpRight size={15} />
+              Live Project <ArrowUpRight size={15} />
             </a>
           )}
-          {hasCaseStudy && (
-            <Link href={`/projects/${project.slug}`} className="link-arrow">
-              Case Study <FileText size={14} />
-            </Link>
-          )}
+          <Link href={`/projects/${project.slug}`} className="link-arrow">
+            Details <FileText size={14} />
+          </Link>
         </div>
       </div>
     </article>

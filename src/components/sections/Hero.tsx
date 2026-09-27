@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Briefcase, Sparkles } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -11,7 +11,7 @@ export default function Hero() {
           <div className="col-lg-6">
             <span className="hero-kicker">
               <span className="dot" aria-hidden="true" />
-              Full-Stack Web Developer
+              Full-Stack Developer
             </span>
 
             <h1 className="hero-title">
@@ -23,16 +23,17 @@ export default function Hero() {
             </h1>
 
             <p className="hero-desc">
-              I&apos;m a Computer Science student and freelance Full-Stack Web Developer focused on
-              building modern websites, web applications, SaaS products, APIs, and backend systems.
+              I&apos;m a Software Developer at Slynx Technologies, developing, deploying, and maintaining
+              responsive web applications — from frontend interfaces to REST APIs, databases,
+              authentication, and payment integrations.
             </p>
 
             <div className="hero-stack">
               <span>React.js</span>
               <span>Next.js</span>
+              <span>Angular</span>
               <span>Node.js</span>
               <span>TypeScript</span>
-              <span>Python</span>
             </div>
 
             <div className="hero-cta-row">
@@ -40,7 +41,7 @@ export default function Hero() {
                 View My Work <ArrowRight size={18} />
               </Link>
               <Link href="/contact" className="btn btn-outline-light btn-lg">
-                Let&apos;s Work Together
+                Get In Touch
               </Link>
             </div>
           </div>
@@ -51,7 +52,7 @@ export default function Hero() {
                 <div className="glow" aria-hidden="true" />
                 <Image
                   src="/my_pic.png"
-                  alt="Umer Lakhany, Full-Stack Web Developer"
+                  alt="Umer Lakhany, Full-Stack Developer"
                   fill
                   sizes="(max-width: 991px) 80vw, 380px"
                   style={{ objectFit: "cover", objectPosition: "top center" }}
@@ -59,8 +60,8 @@ export default function Hero() {
                 />
               </div>
               <div className="hero-float-card card-top">
-                <span className="badge-dot" aria-hidden="true" />
-                Available for freelance work
+                <Briefcase size={14} />
+                Software Developer @ Slynx Technologies
               </div>
               <div className="hero-float-card card-bottom">
                 <Sparkles size={14} />

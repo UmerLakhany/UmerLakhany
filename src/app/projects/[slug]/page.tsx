@@ -39,7 +39,6 @@ export default async function ProjectCaseStudyPage({
   const project = getProjectBySlug(slug);
   if (!project) notFound();
 
-  const cs = project.caseStudy;
   const related = projects.filter((p) => p.slug !== project.slug && p.categories.some((c) => project.categories.includes(c))).slice(0, 3);
 
   return (
@@ -74,7 +73,7 @@ export default async function ProjectCaseStudyPage({
                   <div className="value">
                     {project.liveUrl ? (
                       <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="link-arrow">
-                        Visit <ArrowUpRight size={14} />
+                        Live Project <ArrowUpRight size={14} />
                       </a>
                     ) : (
                       "Not public yet"
@@ -97,17 +96,15 @@ export default async function ProjectCaseStudyPage({
           <div className="row g-5">
             <div className="col-lg-7">
               <span className="case-label">Overview</span>
-              <p className="fs-5">{cs?.overview ?? project.description}</p>
+              <p className="fs-5">{project.description}</p>
             </div>
             <div className="col-lg-5">
               <div className="surface-card p-4">
                 <h3 className="h6 mb-3">Technology</h3>
                 <div className="project-tags mb-0">
-                  {project.techStack.length > 0 ? (
-                    project.techStack.map((t) => <span key={t}>{t}</span>)
-                  ) : (
-                    <span className="text-secondary-token">To be confirmed</span>
-                  )}
+                  {project.techStack.map((t) => (
+                    <span key={t}>{t}</span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -115,88 +112,19 @@ export default async function ProjectCaseStudyPage({
         </div>
       </section>
 
-      {cs ? (
-        <>
-          <section className="case-section">
-            <div className="container">
-              <div className="row g-5">
-                <div className="col-lg-6">
-                  <span className="case-label">The Challenge</span>
-                  <p>{cs.challenge}</p>
-                </div>
-                <div className="col-lg-6">
-                  <span className="case-label">The Solution</span>
-                  <p>{cs.solution}</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="case-section">
-            <div className="container">
-              <span className="case-label">Key Features</span>
-              <h2 className="h3 mb-4">What it does</h2>
-              <ul className="feature-list">
-                {cs.features.map((f) => (
-                  <li key={f}>
-                    <CheckCircle2 size={18} />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-
-          <section className="case-section">
-            <div className="container">
-              <div className="row g-5">
-                <div className="col-lg-6">
-                  <span className="case-label">My Role</span>
-                  <p>{cs.role}</p>
-                </div>
-                {cs.architecture && (
-                  <div className="col-lg-6">
-                    <span className="case-label">Architecture</span>
-                    <p>{cs.architecture}</p>
-                  </div>
-                )}
-              </div>
-            </div>
-          </section>
-
-          {cs.challenges && (
-            <section className="case-section">
-              <div className="container">
-                <span className="case-label">Technical Challenges</span>
-                <p className="fs-5 mb-0">{cs.challenges}</p>
-              </div>
-            </section>
-          )}
-
-          <section className="case-section">
-            <div className="container">
-              <div className="row g-5">
-                <div className="col-lg-6">
-                  <span className="case-label">Outcome / Status</span>
-                  <p>{cs.outcome}</p>
-                </div>
-                {(cs.learned || cs.future) && (
-                  <div className="col-lg-6">
-                    <span className="case-label">{cs.learned ? "What I Learned" : "Future Improvements"}</span>
-                    <p>{cs.learned ?? cs.future}</p>
-                  </div>
-                )}
-              </div>
-            </div>
-          </section>
-        </>
-      ) : (
+      {project.highlights.length > 0 && (
         <section className="case-section">
           <div className="container">
-            <p className="fs-5 text-secondary-token mb-0">
-              A full written case study for this project isn&apos;t published yet — the live site linked
-              above is the best way to see it in action.
-            </p>
+            <span className="case-label">Highlights</span>
+            <h2 className="h3 mb-4">What I built</h2>
+            <ul className="feature-list">
+              {project.highlights.map((h) => (
+                <li key={h}>
+                  <CheckCircle2 size={18} />
+                  {h}
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       )}
@@ -204,7 +132,7 @@ export default async function ProjectCaseStudyPage({
       {related.length > 0 && (
         <section className="case-section">
           <div className="container">
-            <span className="case-label">Related Projects</span>
+            <span className="case-label">More Projects</span>
             <h2 className="h3 mb-4">More work like this</h2>
             <div className="row g-4">
               {related.map((r) => (
@@ -219,9 +147,9 @@ export default async function ProjectCaseStudyPage({
 
       <section className="section text-center">
         <div className="container">
-          <h2 className="section-title">Have a similar project?</h2>
+          <h2 className="section-title">Want to get in touch?</h2>
           <Link href="/contact" className="btn btn-primary btn-lg mt-2">
-            Start a Project <ArrowRight size={18} />
+            Contact Me <ArrowRight size={18} />
           </Link>
         </div>
       </section>

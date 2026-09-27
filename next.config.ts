@@ -13,6 +13,14 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
   },
   compress: true,
+  // Old routes from the previous version of the site.
+  async redirects() {
+    return [
+      { source: "/services", destination: "/about", permanent: true },
+      { source: "/services/:slug", destination: "/about", permanent: true },
+      { source: "/journey", destination: "/experience", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

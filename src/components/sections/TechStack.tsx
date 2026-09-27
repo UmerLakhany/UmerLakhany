@@ -14,8 +14,7 @@ export default function TechStack() {
       <div className="container">
         <Reveal className="section-head mx-auto" as="div">
           <span className="eyebrow justify-content-center">Technology</span>
-          <h2 className="section-title">Tools &amp; Technologies</h2>
-          <p className="section-sub">The stack I reach for most, organized by where it fits.</p>
+          <h2 className="section-title">Technical Skills</h2>
         </Reveal>
 
         <Reveal className="d-flex justify-content-center mb-5">
