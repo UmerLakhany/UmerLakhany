@@ -8,7 +8,7 @@ export const siteConfig = {
   location: "Karachi, Pakistan",
   email: "lakhanyumer@gmail.com",
   phone: "+92 327 2298414",
-  cvUrl: "/Muhammad_Umer_Lakakhany_CV.pdf",
+  cvUrl: "/Muhammad_Umer_Lakhany_CV.pdf",
   description:
     "Umer Lakhany is a Full-Stack Developer at Slynx Technologies, building responsive web applications with JavaScript, TypeScript, React.js, Next.js, Angular, Node.js and Express.js.",
   url: "https://umer-lakhany.vercel.app",
