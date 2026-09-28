@@ -6,7 +6,7 @@ I'm a Full-Stack Developer and Computer Science student focused on building mode
 
 I work across frontend and backend development, turning requirements into practical software — including web platforms, dashboards, REST APIs, authentication, and database-driven applications.
 
-🚀 About Me
+<h2>🚀 About Me</h2>
 
 🎓 Bachelor of Science in Computer Science (BSCS) student at Federal Urdu University of Arts, Sciences & Technology
 
@@ -22,27 +22,27 @@ I work across frontend and backend development, turning requirements into practi
 
 🧠 Continuously improving my software engineering and problem-solving skills
 
-🛠️ Tech Stack
+<h2>🛠️ Tech Stack</h2>
 
-Frontend
+<h3>Frontend</h3>
 
 <p>
   <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,angular,tailwind,bootstrap" alt="Frontend technologies" />
 </p>
 
-Backend
+<h3>Backend</h3>
 
 <p>
   <img src="https://skillicons.dev/icons?i=nodejs,express" alt="Backend technologies" />
 </p>
 
-Databases & Services
+<h3>Databases & Services</h3>
 
 <p>
   <img src="https://skillicons.dev/icons?i=mongodb,postgres,mysql,firebase" alt="Databases and services" />
 </p>
 
-Tools & Platforms
+<h3>Tools & Platforms</h3>
 
 <p>
   <img src="https://skillicons.dev/icons?i=git,github,postman,vercel" alt="Tools and platforms" />
@@ -50,29 +50,29 @@ Tools & Platforms
 
 Also: REST APIs, JWT Authentication, PayPal, Stripe, Google APIs, and third-party API integration.
 
-💻 What I Build
+<h2>💻 What I Build</h2>
 
-🌐 Web Applications
+<h3>🌐 Web Applications</h3>
 
 Responsive web applications with reusable components, interactive interfaces, and end-to-end functionality.
 
-⚙️ Backend Systems & APIs
+<h3>⚙️ Backend Systems & APIs</h3>
 
 Backend features, REST APIs, application logic, authentication, and database operations using Node.js and Express.js.
 
-📊 Admin Panels & Dashboards
+<h3>📊 Admin Panels & Dashboards</h3>
 
 Administrative functionality and interfaces for managing application data, content, and platform operations.
 
-🔗 Third-Party Integrations
+<h3>🔗 Third-Party Integrations</h3>
 
 Payment gateway and external service integrations, including PayPal, Stripe, and Google APIs.
 
-🧰 Maintenance & Troubleshooting
+<h3>🧰 Maintenance & Troubleshooting</h3>
 
 Debugging, error resolution, and application improvements to support functionality and reliability.
 
-🧩 Core Skills
+<h2>🧩 Core Skills</h2>
 
 Frontend Development
 Backend Development
@@ -87,13 +87,13 @@ Third-Party API Integration
 Debugging & Error Resolution
 Hosting & Domain Integration
 
-🎓 Education
+<h2>🎓 Education</h2>
 
 Bachelor of Science in Computer Science (BSCS)
 Federal Urdu University of Arts, Sciences & Technology
 2025–2028 (Expected)
 
-🌐 Connect With Me
+<h2>🌐 Connect With Me</h2>
 
 <p>
   <a href="https://umer-lakhany.vercel.app" target="_blank" rel="noreferrer">
